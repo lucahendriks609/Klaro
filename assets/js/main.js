@@ -173,7 +173,7 @@
       ];
 
       var mailto =
-        "mailto:info.klarodesgins@gmail.com" +
+        "mailto:info.klarodesigns@gmail.com" +
         "?subject=" + encodeURIComponent(subject) +
         "&body=" + encodeURIComponent(bodyLines.join("\n"));
 
