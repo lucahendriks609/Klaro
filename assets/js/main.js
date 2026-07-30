@@ -118,13 +118,50 @@
     }
   }
 
+  /* ---------- Scroll bolt marker — signature scroll animation, every page ---------- */
+
+  var boltTrack = document.createElement("div");
+  boltTrack.className = "scroll-bolt-track";
+  boltTrack.setAttribute("aria-hidden", "true");
+  var boltMarker = document.createElement("div");
+  boltMarker.className = "scroll-bolt-marker";
+  boltMarker.innerHTML =
+    '<svg viewBox="0 0 24 32" width="20" height="27"><path d="M14 0 2 18h8l-4 14L22 12h-9L14 0z"/></svg>';
+  boltTrack.appendChild(boltMarker);
+  document.body.appendChild(boltTrack);
+
+  var layerAura = heroVisual ? heroVisual.querySelector(".layer-aura") : null;
+  var layerBolt = heroVisual ? heroVisual.querySelector(".layer-bolt") : null;
+  var layerChip = heroVisual ? heroVisual.querySelector(".layer-chip") : null;
+
   var progressBar = document.querySelector(".scroll-progress");
-  if (progressBar) {
+  if (progressBar || boltMarker || heroVisual) {
     var ticking = false;
     var updateProgress = function () {
       var docHeight = document.documentElement.scrollHeight - window.innerHeight;
       var pct = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
-      progressBar.style.width = pct + "%";
+
+      if (progressBar) {
+        progressBar.style.width = pct + "%";
+      }
+      if (boltMarker) {
+        boltMarker.style.top = pct + "%";
+      }
+
+      if (heroVisual && !prefersReducedMotion) {
+        var rect = heroVisual.getBoundingClientRect();
+        var progress = Math.min(Math.max(-rect.top / (rect.height || 1), 0), 1);
+        if (layerAura) {
+          layerAura.style.transform = "translateY(" + progress * 30 + "px)";
+        }
+        if (layerBolt) {
+          layerBolt.style.transform = "translateY(" + progress * -16 + "px)";
+        }
+        if (layerChip) {
+          layerChip.style.transform = "translateY(" + progress * -48 + "px)";
+        }
+      }
+
       ticking = false;
     };
     window.addEventListener(
