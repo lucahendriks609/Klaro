@@ -18,6 +18,37 @@
     });
   }
 
+  var prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  if (!prefersReducedMotion && "IntersectionObserver" in window) {
+    var revealTargets = document.querySelectorAll(
+      ".hero-copy, .hero-visual, .section-head, .service-card, .compare-card, .contact-form, .contact-direct"
+    );
+
+    revealTargets.forEach(function (el, i) {
+      el.classList.add("reveal", "reveal-stagger");
+      el.style.setProperty("--stagger", i % 4);
+    });
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+    );
+
+    revealTargets.forEach(function (el) {
+      observer.observe(el);
+    });
+  }
+
   var yearEl = document.getElementById("year");
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
@@ -45,7 +76,7 @@
       ];
 
       var mailto =
-        "mailto:hallo@klaro.nl" +
+        "mailto:info.klarodesgins@gmail.com" +
         "?subject=" + encodeURIComponent(subject) +
         "&body=" + encodeURIComponent(bodyLines.join("\n"));
 
