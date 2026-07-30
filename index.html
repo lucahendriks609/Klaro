@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Klaro — Je merk. Klaar.</title>
-  <meta name="description" content="Klaro bouwt brandbooks, social media kits en websites voor kleine ondernemers zonder marketingbudget of interne designer. Snel, helder, klaar." />
+  <title data-i18n="meta.title.index">Klaro — Je merk. Klaar.</title>
+  <meta name="description" data-i18n-attr="content:meta.desc.index" content="Klaro bouwt brandbooks, social media kits en websites voor kleine ondernemers zonder marketingbudget of interne designer. Snel, helder, klaar." />
 
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
 
@@ -26,14 +26,22 @@
 
       <nav aria-label="Hoofdmenu">
         <ul class="nav-links">
-          <li><a href="diensten.html">Diensten</a></li>
-          <li><a href="voorbeelden.html">Voorbeelden</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="diensten.html" data-i18n="nav.diensten">Diensten</a></li>
+          <li><a href="voorbeelden.html" data-i18n="nav.voorbeelden">Voorbeelden</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
         </ul>
+        <div class="mobile-lang-switch lang-switch" role="group" aria-label="Taal / Language">
+          <button type="button" class="lang-btn" data-lang="nl">NL</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
       </nav>
 
       <div class="nav-cta">
-        <a href="contact.html" class="btn btn-secondary">Gratis intake</a>
+        <div class="lang-switch" role="group" aria-label="Taal / Language">
+          <button type="button" class="lang-btn" data-lang="nl">NL</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <a href="contact.html" class="btn btn-secondary" data-i18n="nav.intake">Gratis intake</a>
         <button class="nav-toggle" aria-label="Menu openen" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -47,33 +55,32 @@
     <section class="hero">
       <div class="container">
         <div class="hero-copy">
-          <p class="eyebrow">
-            <svg class="bolt" width="10" height="14" viewBox="0 0 24 32" aria-hidden="true"><path fill="currentColor" d="M14 0 2 18h8l-4 14L22 12h-9L14 0z"/></svg>
-            Branding &amp; webdesign voor kleine ondernemers
-          </p>
-          <h1>Je merk. <span class="accent">Klaar.</span></h1>
-          <p class="hero-lede">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Branding &amp; webdesign voor kleine ondernemers</p>
+          <h1><span data-i18n="hero.title1">Je merk.</span> <span class="accent" data-i18n="hero.title.accent">Klaar.</span></h1>
+          <p class="hero-lede" data-i18n="hero.lede">
             Je hoeft geen groot budget te hebben. Je hebt gewoon een duidelijk merk nodig —
             snel, helder, en klaar om te gebruiken. Geen bureau met een pitch-deck, gewoon
             iemand die het even goed voor je regelt.
           </p>
           <div class="hero-actions">
-            <a href="contact.html" class="btn btn-primary">Vraag een gratis intake aan</a>
-            <a href="voorbeelden.html" class="btn btn-secondary">Bekijk voorbeelden</a>
+            <a href="contact.html" class="btn btn-primary" data-i18n="hero.cta.primary">Vraag een gratis intake aan</a>
+            <a href="voorbeelden.html" class="btn btn-secondary" data-i18n="hero.cta.secondary">Bekijk voorbeelden</a>
           </div>
           <ul class="hero-trust">
-            <li>Vast voorstel binnen 24 uur</li>
-            <li>Dagen, geen maanden</li>
-            <li>Eén aanspreekpunt</li>
+            <li data-i18n="hero.trust1">Vast voorstel binnen 24 uur</li>
+            <li data-i18n="hero.trust2">Dagen, geen maanden</li>
+            <li data-i18n="hero.trust3">Eén aanspreekpunt</li>
           </ul>
         </div>
 
         <div class="hero-visual">
+          <span class="bolt-aura" aria-hidden="true"></span>
           <svg class="bolt-big" viewBox="0 0 24 32" aria-hidden="true"><path d="M14 0 2 18h8l-4 14L22 12h-9L14 0z"/></svg>
-          <span class="spark spark-1" aria-hidden="true"></span>
-          <span class="spark spark-2" aria-hidden="true"></span>
-          <span class="spark spark-3" aria-hidden="true"></span>
-          <span class="spark spark-4" aria-hidden="true"></span>
+          <div class="ui-chip" aria-hidden="true">
+            <div class="ui-chip-bar"><span></span><span></span><span></span></div>
+            <div class="ui-chip-line w-70"></div>
+            <div class="ui-chip-line w-45"></div>
+          </div>
           <div class="strike-flash" aria-hidden="true"></div>
         </div>
       </div>
@@ -84,42 +91,50 @@
       <div class="container">
         <div class="teaser-head">
           <div class="section-head">
-            <p class="eyebrow">Diensten</p>
-            <h2>Wat je krijgt</h2>
-            <p>Los af te nemen, maar het sterkste startpunt is het bundel: eerst het
+            <p class="eyebrow" data-i18n="services.eyebrow">Diensten</p>
+            <h2 data-i18n="services.title">Wat je krijgt</h2>
+            <p data-i18n="services.lede.mini">Los af te nemen, maar het sterkste startpunt is het bundel: eerst het
               brandbook als fundament, dan social kit en website die daarop voortbouwen.</p>
           </div>
-          <a href="diensten.html" class="btn btn-secondary">Bekijk alle diensten</a>
+          <a href="diensten.html" class="btn btn-secondary" data-i18n="services.cta">Bekijk alle diensten</a>
         </div>
 
         <div class="service-grid">
           <div class="service-card is-mini">
-            <div class="service-icon">1</div>
-            <h3>Brandbook</h3>
-            <p class="price">vanaf €350</p>
-            <p>Logo, kleurenpalet, typografie en tone-of-voice in één document.</p>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="9" cy="8.5" r="1.6"/><path d="M7 13h10M7 16.5h6"/></svg>
+            </div>
+            <h3 data-i18n="service.brandbook.title">Brandbook</h3>
+            <p class="price" data-i18n="service.brandbook.price">vanaf €350</p>
+            <p data-i18n="service.brandbook.desc.mini">Logo, kleurenpalet, typografie en tone-of-voice in één document.</p>
           </div>
 
           <div class="service-card is-mini">
-            <div class="service-icon">2</div>
-            <h3>Social media kit</h3>
-            <p class="price">vanaf €200</p>
-            <p>Sjablonen en contentrichtlijnen voor een consistente uitstraling.</p>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+            </div>
+            <h3 data-i18n="service.socialkit.title">Social media kit</h3>
+            <p class="price" data-i18n="service.socialkit.price">vanaf €200</p>
+            <p data-i18n="service.socialkit.desc.mini">Sjablonen en contentrichtlijnen voor een consistente uitstraling.</p>
           </div>
 
           <div class="service-card is-mini">
-            <div class="service-icon">3</div>
-            <h3>Website</h3>
-            <p class="price">vanaf €50 setup + €30/mnd</p>
-            <p>Een snelle, strakke site op maat — zonder onnodige extra's.</p>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2"/><path d="M3 9h18"/><circle cx="6" cy="6.7" r="0.5" fill="currentColor" stroke="none"/><circle cx="8.4" cy="6.7" r="0.5" fill="currentColor" stroke="none"/></svg>
+            </div>
+            <h3 data-i18n="service.website.title">Website</h3>
+            <p class="price" data-i18n="service.website.price">vanaf €50 setup + €30/mnd</p>
+            <p data-i18n="service.website.desc.mini">Een snelle, strakke site op maat — zonder onnodige extra's.</p>
           </div>
 
           <div class="service-card is-mini is-bundle">
-            <span class="badge">Sterkste start</span>
-            <div class="service-icon">★</div>
-            <h3>Bundel</h3>
-            <p class="price">€500 <span style="color:#4B4E57;font-weight:500;font-size:0.85rem;">(bespaar €50)</span></p>
-            <p>Brandbook + social media kit samen, in één consistente stijl.</p>
+            <span class="badge" data-i18n="service.bundle.badge">Sterkste start</span>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg>
+            </div>
+            <h3 data-i18n="service.bundle.title">Bundel</h3>
+            <p class="price">€500 <span style="color:var(--gray-500);font-weight:500;font-size:0.85rem;" data-i18n="service.bundle.save">(bespaar €50)</span></p>
+            <p data-i18n="service.bundle.desc.mini">Brandbook + social media kit samen, in één consistente stijl.</p>
           </div>
         </div>
       </div>
@@ -130,34 +145,60 @@
       <div class="container">
         <div class="teaser-head">
           <div class="section-head">
-            <p class="eyebrow">Voor &amp; na</p>
-            <h2>Van clip art naar premium</h2>
-            <p>Je logo bepaalt of mensen je serieus nemen. Zo verandert een merk waar niemand
+            <p class="eyebrow" data-i18n="examples.eyebrow">Voor &amp; na</p>
+            <h2 data-i18n="examples.title">Van clip art naar premium</h2>
+            <p data-i18n="examples.lede.mini">Je logo bepaalt of mensen je serieus nemen. Zo verandert een merk waar niemand
               meer naar omkijkt in een merk dat blijft hangen.</p>
           </div>
-          <a href="voorbeelden.html" class="btn btn-secondary">Bekijk alle voorbeelden</a>
+          <a href="voorbeelden.html" class="btn btn-secondary" data-i18n="examples.cta">Bekijk alle voorbeelden</a>
         </div>
 
         <div class="compare-grid">
-          <div class="compare-card compare-before">
-            <p class="compare-label">Voor</p>
-            <div class="mock">
-              <p class="mock-name">Lunchroom De Hoek</p>
-              <p class="mock-tag">vers &amp; lekker sinds 2009</p>
-              <span class="mock-chip">NU MET GRATIS WIFI!</span>
+          <div class="compare-col">
+            <p class="compare-label" data-i18n="compare.before">Voor</p>
+            <div class="device device-browser is-before style-lunchroom">
+              <div class="device-bar">
+                <span class="device-dot"></span><span class="device-dot"></span><span class="device-dot"></span>
+                <span class="device-url">lunchroomdehoek.nl</span>
+              </div>
+              <div class="site-nav">
+                <span class="site-logo">Lunchroom<br>De Hoek</span>
+                <nav class="site-nav-links"><span>Home</span><span>Menu</span><span>Over ons</span><span>Contact</span><span>Openingstijden</span></nav>
+              </div>
+              <div class="site-hero">
+                <h4>Welkom bij Lunchroom De Hoek!!</h4>
+                <p>Vers &amp; lekker sinds 2009, kom gezellig langs voor de lekkerste broodjes</p>
+                <span class="site-btn">Bekijk ons menu &gt;&gt;</span>
+              </div>
+              <div class="site-grid">
+                <span class="site-card"></span><span class="site-card"></span><span class="site-card"></span>
+              </div>
             </div>
           </div>
 
-          <div class="compare-card compare-after">
-            <p class="compare-label">Na</p>
-            <div class="mock">
-              <p class="mock-name">de hoek</p>
-              <p class="mock-tag">Vers. Lokaal. Elke dag.</p>
-              <span class="mock-chip">BEKIJK DE MENUKAART</span>
+          <div class="compare-col is-after">
+            <p class="compare-label" data-i18n="compare.after">Na</p>
+            <div class="device device-browser is-after">
+              <div class="device-bar">
+                <span class="device-dot"></span><span class="device-dot"></span><span class="device-dot"></span>
+                <span class="device-url">dehoek.nl</span>
+              </div>
+              <div class="site-nav">
+                <span class="site-logo">de hoek</span>
+                <nav class="site-nav-links"><span>Menu</span><span>Verhaal</span><span>Contact</span></nav>
+              </div>
+              <div class="site-hero">
+                <h4>Vers. Lokaal. Elke dag.</h4>
+                <p>De beste broodjes van de buurt, gemaakt met verse ingrediënten.</p>
+                <span class="site-btn">Bekijk de menukaart</span>
+              </div>
+              <div class="site-grid">
+                <span class="site-card"></span><span class="site-card"></span><span class="site-card"></span>
+              </div>
             </div>
           </div>
         </div>
-        <p class="showcase-note">Illustratief voorbeeld — geen echte klant, ter demonstratie van het verschil in uitstraling.</p>
+        <p class="showcase-note" data-i18n="examples.note.mini">Illustratief voorbeeld — geen echte klant, ter demonstratie van het verschil in uitstraling.</p>
       </div>
     </section>
 
@@ -165,9 +206,9 @@
     <section class="cta-banner-section">
       <div class="container">
         <div class="cta-banner">
-          <h2>Klaar voor een merk waar je trots op bent?</h2>
-          <p>Plan een gratis intake — binnen 24 uur een vast voorstel, geen bandbreedte.</p>
-          <a href="contact.html" class="btn btn-light">Vraag een gratis intake aan</a>
+          <h2 data-i18n="cta.home.title">Klaar voor een merk waar je trots op bent?</h2>
+          <p data-i18n="cta.home.lede">Plan een gratis intake — binnen 24 uur een vast voorstel, geen bandbreedte.</p>
+          <a href="contact.html" class="btn btn-light" data-i18n="cta.button.intake">Vraag een gratis intake aan</a>
         </div>
       </div>
     </section>
@@ -181,14 +222,15 @@
         klaro
       </div>
       <ul class="footer-links">
-        <li><a href="diensten.html">Diensten</a></li>
-        <li><a href="voorbeelden.html">Voorbeelden</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="diensten.html" data-i18n="nav.diensten">Diensten</a></li>
+        <li><a href="voorbeelden.html" data-i18n="nav.voorbeelden">Voorbeelden</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <p style="margin:0;">© <span id="year"></span> Klaro</p>
     </div>
   </footer>
 
+  <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

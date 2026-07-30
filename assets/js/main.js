@@ -26,13 +26,61 @@
     }
   });
 
+  /* ---------- Language toggle (NL default, client-side EN swap) ---------- */
+
+  var LANG_KEY = "klaro-lang";
+  var dict = (window.KLARO_I18N && window.KLARO_I18N.en) || {};
+  var currentLang = localStorage.getItem(LANG_KEY) || "nl";
+
+  function applyLanguage(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var key = el.getAttribute("data-i18n");
+      if (el.dataset.i18nNl === undefined) {
+        el.dataset.i18nNl = el.textContent;
+      }
+      el.textContent = lang === "en" && dict[key] ? dict[key] : el.dataset.i18nNl;
+    });
+
+    document.querySelectorAll("[data-i18n-attr]").forEach(function (el) {
+      el.getAttribute("data-i18n-attr").split(";").forEach(function (pair) {
+        var parts = pair.split(":");
+        var attr = parts[0];
+        var key = parts[1];
+        var storeAttr = "i18nNl_" + attr;
+        if (el.dataset[storeAttr] === undefined) {
+          el.dataset[storeAttr] = el.getAttribute(attr) || "";
+        }
+        el.setAttribute(attr, lang === "en" && dict[key] ? dict[key] : el.dataset[storeAttr]);
+      });
+    });
+
+    document.querySelectorAll(".lang-btn").forEach(function (btn) {
+      var active = btn.getAttribute("data-lang") === lang;
+      btn.classList.toggle("is-active", active);
+      btn.setAttribute("aria-pressed", active ? "true" : "false");
+    });
+
+    localStorage.setItem(LANG_KEY, lang);
+  }
+
+  document.querySelectorAll(".lang-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      applyLanguage(btn.getAttribute("data-lang"));
+    });
+  });
+
+  applyLanguage(currentLang);
+
   var prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   ).matches;
 
   if (!prefersReducedMotion && "IntersectionObserver" in window) {
     var revealTargets = document.querySelectorAll(
-      ".hero-copy, .hero-visual, .page-hero, .section-head, .service-card, .compare-card, .contact-form, .contact-direct, .example-block, .cta-banner"
+      ".hero-copy, .hero-visual, .page-hero, .section-head, .service-card, .compare-col, .contact-form, .contact-direct, .example-block, .cta-banner"
     );
 
     revealTargets.forEach(function (el, i) {
@@ -108,12 +156,18 @@
       var message = form.elements["message"].value.trim();
       var email = form.elements["email"].value.trim();
 
-      var subject = "Intake aanvraag: " + (business || name);
+      var isEn = currentLang === "en";
+      var subjectLabel = isEn ? dict["mail.subject"] : "Intake aanvraag";
+      var labels = isEn
+        ? { name: dict["mail.name"], business: dict["mail.business"], email: dict["mail.email"], interest: dict["mail.interest"] }
+        : { name: "Naam", business: "Bedrijf", email: "E-mail", interest: "Interesse" };
+
+      var subject = subjectLabel + ": " + (business || name);
       var bodyLines = [
-        "Naam: " + name,
-        "Bedrijf: " + business,
-        "E-mail: " + email,
-        "Interesse: " + service,
+        labels.name + ": " + name,
+        labels.business + ": " + business,
+        labels.email + ": " + email,
+        labels.interest + ": " + service,
         "",
         message
       ];

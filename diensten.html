@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Diensten — Klaro</title>
-  <meta name="description" content="Brandbook, social media kit en website — los af te nemen of als bundel. Vanaf-prijzen en wat er precies in zit." />
+  <title data-i18n="meta.title.diensten">Diensten — Klaro</title>
+  <meta name="description" data-i18n-attr="content:meta.desc.diensten" content="Brandbook, social media kit en website — los af te nemen of als bundel. Vanaf-prijzen en wat er precies in zit." />
 
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
 
@@ -26,14 +26,22 @@
 
       <nav aria-label="Hoofdmenu">
         <ul class="nav-links">
-          <li><a href="diensten.html">Diensten</a></li>
-          <li><a href="voorbeelden.html">Voorbeelden</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="diensten.html" data-i18n="nav.diensten">Diensten</a></li>
+          <li><a href="voorbeelden.html" data-i18n="nav.voorbeelden">Voorbeelden</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
         </ul>
+        <div class="mobile-lang-switch lang-switch" role="group" aria-label="Taal / Language">
+          <button type="button" class="lang-btn" data-lang="nl">NL</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
       </nav>
 
       <div class="nav-cta">
-        <a href="contact.html" class="btn btn-secondary">Gratis intake</a>
+        <div class="lang-switch" role="group" aria-label="Taal / Language">
+          <button type="button" class="lang-btn" data-lang="nl">NL</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <a href="contact.html" class="btn btn-secondary" data-i18n="nav.intake">Gratis intake</a>
         <button class="nav-toggle" aria-label="Menu openen" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -45,9 +53,9 @@
 
     <section class="page-hero">
       <div class="container">
-        <p class="eyebrow">Diensten</p>
-        <h1>Wat je krijgt</h1>
-        <p>Elke dienst is los af te nemen. Het sterkste startpunt is het bundel: eerst het
+        <p class="eyebrow" data-i18n="services.eyebrow">Diensten</p>
+        <h1 data-i18n="services.title">Wat je krijgt</h1>
+        <p data-i18n="services.lede.full">Elke dienst is los af te nemen. Het sterkste startpunt is het bundel: eerst het
           brandbook als fundament, dan social kit en website die daarop voortbouwen —
           consistent in plaats van drie losse projecten die niet bij elkaar passen.</p>
       </div>
@@ -57,56 +65,64 @@
       <div class="container">
         <div class="service-grid">
           <div class="service-card">
-            <div class="service-icon">1</div>
-            <h3>Brandbook</h3>
-            <p class="price">vanaf €350</p>
-            <p>Logo, kleurenpalet, typografie en tone-of-voice in één overzichtelijk document —
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="9" cy="8.5" r="1.6"/><path d="M7 13h10M7 16.5h6"/></svg>
+            </div>
+            <h3 data-i18n="service.brandbook.title">Brandbook</h3>
+            <p class="price" data-i18n="service.brandbook.price">vanaf €350</p>
+            <p data-i18n="service.brandbook.desc.full">Logo, kleurenpalet, typografie en tone-of-voice in één overzichtelijk document —
               het fundament van je merk.</p>
             <ul>
-              <li>Wordmark-logo</li>
-              <li>Kleurenpalet &amp; typografie</li>
-              <li>Tone-of-voice basis</li>
-              <li>Levering als PDF</li>
+              <li data-i18n="service.brandbook.li1">Wordmark-logo</li>
+              <li data-i18n="service.brandbook.li2">Kleurenpalet &amp; typografie</li>
+              <li data-i18n="service.brandbook.li3">Tone-of-voice basis</li>
+              <li data-i18n="service.brandbook.li4">Levering als PDF</li>
             </ul>
           </div>
 
           <div class="service-card">
-            <div class="service-icon">2</div>
-            <h3>Social media kit</h3>
-            <p class="price">vanaf €200</p>
-            <p>Sjablonen en contentrichtlijnen voor een consistente uitstraling op Instagram
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+            </div>
+            <h3 data-i18n="service.socialkit.title">Social media kit</h3>
+            <p class="price" data-i18n="service.socialkit.price">vanaf €200</p>
+            <p data-i18n="service.socialkit.desc.full">Sjablonen en contentrichtlijnen voor een consistente uitstraling op Instagram
               en andere social kanalen.</p>
             <ul>
-              <li>Post- &amp; story templates</li>
-              <li>Contentrichtlijnen</li>
-              <li>Consistent met je brandbook</li>
+              <li data-i18n="service.socialkit.li1">Post- &amp; story templates</li>
+              <li data-i18n="service.socialkit.li2">Contentrichtlijnen</li>
+              <li data-i18n="service.socialkit.li3">Consistent met je brandbook</li>
             </ul>
           </div>
 
           <div class="service-card">
-            <div class="service-icon">3</div>
-            <h3>Website</h3>
-            <p class="price">vanaf €50 setup + €30/mnd</p>
-            <p>Een snelle, strakke site op maat. Geen onnodige e-commerce-laag als je niks
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2"/><path d="M3 9h18"/><circle cx="6" cy="6.7" r="0.5" fill="currentColor" stroke="none"/><circle cx="8.4" cy="6.7" r="0.5" fill="currentColor" stroke="none"/></svg>
+            </div>
+            <h3 data-i18n="service.website.title">Website</h3>
+            <p class="price" data-i18n="service.website.price">vanaf €50 setup + €30/mnd</p>
+            <p data-i18n="service.website.desc.full">Een snelle, strakke site op maat. Geen onnodige e-commerce-laag als je niks
               verkoopt — gewoon duidelijk wie je bent en hoe je te bereiken bent.</p>
             <ul>
-              <li>Snel en mobielvriendelijk</li>
-              <li>Op maat van je brandbook</li>
-              <li>Inclusief hosting</li>
+              <li data-i18n="service.website.li1">Snel en mobielvriendelijk</li>
+              <li data-i18n="service.website.li2">Op maat van je brandbook</li>
+              <li data-i18n="service.website.li3">Inclusief hosting</li>
             </ul>
           </div>
 
           <div class="service-card is-bundle">
-            <span class="badge">Sterkste start</span>
-            <div class="service-icon">★</div>
-            <h3>Bundel</h3>
-            <p class="price">€500 <span style="color:#4B4E57;font-weight:500;font-size:0.85rem;">(bespaar €50)</span></p>
-            <p>Brandbook + social media kit samen. Eén consistent merk in plaats van losse
+            <span class="badge" data-i18n="service.bundle.badge">Sterkste start</span>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg>
+            </div>
+            <h3 data-i18n="service.bundle.title">Bundel</h3>
+            <p class="price">€500 <span style="color:var(--gray-500);font-weight:500;font-size:0.85rem;" data-i18n="service.bundle.save">(bespaar €50)</span></p>
+            <p data-i18n="service.bundle.desc.full">Brandbook + social media kit samen. Eén consistent merk in plaats van losse
               projecten die niet bij elkaar passen.</p>
             <ul>
-              <li>Brandbook</li>
-              <li>Social media kit</li>
-              <li>Alles in dezelfde stijl</li>
+              <li data-i18n="service.bundle.li1">Brandbook</li>
+              <li data-i18n="service.bundle.li2">Social media kit</li>
+              <li data-i18n="service.bundle.li3">Alles in dezelfde stijl</li>
             </ul>
           </div>
         </div>
@@ -116,9 +132,9 @@
     <section class="cta-banner-section">
       <div class="container">
         <div class="cta-banner">
-          <h2>Niet zeker welke dienst bij je past?</h2>
-          <p>In een gratis intake van 4-5 vragen weten we het binnen een paar minuten.</p>
-          <a href="contact.html" class="btn btn-light">Plan een gratis intake</a>
+          <h2 data-i18n="cta.diensten.title">Niet zeker welke dienst bij je past?</h2>
+          <p data-i18n="cta.diensten.lede">In een gratis intake van 4-5 vragen weten we het binnen een paar minuten.</p>
+          <a href="contact.html" class="btn btn-light" data-i18n="cta.button.intake">Plan een gratis intake</a>
         </div>
       </div>
     </section>
@@ -132,14 +148,15 @@
         klaro
       </div>
       <ul class="footer-links">
-        <li><a href="diensten.html">Diensten</a></li>
-        <li><a href="voorbeelden.html">Voorbeelden</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="diensten.html" data-i18n="nav.diensten">Diensten</a></li>
+        <li><a href="voorbeelden.html" data-i18n="nav.voorbeelden">Voorbeelden</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <p style="margin:0;">© <span id="year"></span> Klaro</p>
     </div>
   </footer>
 
+  <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

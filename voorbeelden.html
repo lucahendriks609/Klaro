@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Voorbeelden — Klaro</title>
-  <meta name="description" content="Van clip art naar premium: voor-en-na voorbeelden van een lunchroom, gym, kapper en zzp'er." />
+  <title data-i18n="meta.title.voorbeelden">Voorbeelden — Klaro</title>
+  <meta name="description" data-i18n-attr="content:meta.desc.voorbeelden" content="Van clip art naar premium: voor-en-na voorbeelden van een lunchroom, gym, kapper en zzp'er." />
 
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
 
@@ -26,14 +26,22 @@
 
       <nav aria-label="Hoofdmenu">
         <ul class="nav-links">
-          <li><a href="diensten.html">Diensten</a></li>
-          <li><a href="voorbeelden.html">Voorbeelden</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="diensten.html" data-i18n="nav.diensten">Diensten</a></li>
+          <li><a href="voorbeelden.html" data-i18n="nav.voorbeelden">Voorbeelden</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
         </ul>
+        <div class="mobile-lang-switch lang-switch" role="group" aria-label="Taal / Language">
+          <button type="button" class="lang-btn" data-lang="nl">NL</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
       </nav>
 
       <div class="nav-cta">
-        <a href="contact.html" class="btn btn-secondary">Gratis intake</a>
+        <div class="lang-switch" role="group" aria-label="Taal / Language">
+          <button type="button" class="lang-btn" data-lang="nl">NL</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <a href="contact.html" class="btn btn-secondary" data-i18n="nav.intake">Gratis intake</a>
         <button class="nav-toggle" aria-label="Menu openen" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -45,9 +53,9 @@
 
     <section class="page-hero">
       <div class="container">
-        <p class="eyebrow">Voor &amp; na</p>
-        <h1>Van clip art naar premium</h1>
-        <p>Je logo bepaalt of mensen je serieus nemen. Hieronder een paar voorbeelden van hoe
+        <p class="eyebrow" data-i18n="examples.eyebrow">Voor &amp; na</p>
+        <h1 data-i18n="examples.title">Van clip art naar premium</h1>
+        <p data-i18n="examples.lede.full">Je logo bepaalt of mensen je serieus nemen. Hieronder een paar voorbeelden van hoe
           dat verschil er in de praktijk uitziet — van toonbank tot Instagram.</p>
       </div>
     </section>
@@ -55,116 +63,220 @@
     <section class="showcase">
       <div class="container">
 
+        <!-- Lunchroom — browser mockup -->
         <div class="example-block">
           <div class="example-label">
-            <span class="example-kind">Lunchroom</span>
+            <span class="example-kind" data-i18n="example.kind.lunchroom">Lunchroom</span>
             <h3>De Hoek</h3>
           </div>
           <div class="compare-grid">
-            <div class="compare-card compare-before">
-              <p class="compare-label">Voor</p>
-              <div class="mock style-lunchroom">
-                <p class="mock-name">Lunchroom De Hoek</p>
-                <p class="mock-tag">vers &amp; lekker sinds 2009</p>
-                <span class="mock-chip">NU MET GRATIS WIFI!</span>
+            <div class="compare-col">
+              <p class="compare-label" data-i18n="compare.before">Voor</p>
+              <div class="device device-browser is-before style-lunchroom">
+                <div class="device-bar">
+                  <span class="device-dot"></span><span class="device-dot"></span><span class="device-dot"></span>
+                  <span class="device-url">lunchroomdehoek.nl</span>
+                </div>
+                <div class="site-nav">
+                  <span class="site-logo">Lunchroom<br>De Hoek</span>
+                  <nav class="site-nav-links"><span>Home</span><span>Menu</span><span>Over ons</span><span>Contact</span><span>Openingstijden</span></nav>
+                </div>
+                <div class="site-hero">
+                  <h4>Welkom bij Lunchroom De Hoek!!</h4>
+                  <p>Vers &amp; lekker sinds 2009, kom gezellig langs voor de lekkerste broodjes</p>
+                  <span class="site-btn">Bekijk ons menu &gt;&gt;</span>
+                </div>
+                <div class="site-grid">
+                  <span class="site-card"></span><span class="site-card"></span><span class="site-card"></span>
+                </div>
               </div>
             </div>
-            <div class="compare-card compare-after">
-              <p class="compare-label">Na</p>
-              <div class="mock">
-                <p class="mock-name">de hoek</p>
-                <p class="mock-tag">Vers. Lokaal. Elke dag.</p>
-                <span class="mock-chip">BEKIJK DE MENUKAART</span>
+            <div class="compare-col is-after">
+              <p class="compare-label" data-i18n="compare.after">Na</p>
+              <div class="device device-browser is-after">
+                <div class="device-bar">
+                  <span class="device-dot"></span><span class="device-dot"></span><span class="device-dot"></span>
+                  <span class="device-url">dehoek.nl</span>
+                </div>
+                <div class="site-nav">
+                  <span class="site-logo">de hoek</span>
+                  <nav class="site-nav-links"><span>Menu</span><span>Verhaal</span><span>Contact</span></nav>
+                </div>
+                <div class="site-hero">
+                  <h4>Vers. Lokaal. Elke dag.</h4>
+                  <p>De beste broodjes van de buurt, gemaakt met verse ingrediënten.</p>
+                  <span class="site-btn">Bekijk de menukaart</span>
+                </div>
+                <div class="site-grid">
+                  <span class="site-card"></span><span class="site-card"></span><span class="site-card"></span>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- FitCore — phone / Instagram mockup -->
         <div class="example-block">
           <div class="example-label">
-            <span class="example-kind">Gym</span>
+            <span class="example-kind" data-i18n="example.kind.gym">Gym</span>
             <h3>FitCore</h3>
           </div>
           <div class="compare-grid">
-            <div class="compare-card compare-before">
-              <p class="compare-label">Voor</p>
-              <div class="mock style-gym">
-                <p class="mock-name">FITCORE GYM!!</p>
-                <p class="mock-tag">HARDER. SNELLER. STERKER.</p>
-                <span class="mock-chip">NU 1 MAAND GRATIS</span>
+            <div class="compare-col">
+              <p class="compare-label" data-i18n="compare.before">Voor</p>
+              <div class="device device-phone is-before style-gym">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                  <div class="ig-header">
+                    <span class="ig-avatar"></span>
+                    <div class="ig-info">
+                      <strong class="ig-handle">fitcoregym</strong>
+                      <div class="ig-stats"><span>128 posts</span><span>2.401 volgers</span></div>
+                    </div>
+                  </div>
+                  <p class="ig-bio">FITCORE GYM!! HARDER SNELLER STERKER — Nu 1 maand gratis proberen!!!</p>
+                  <div class="ig-grid">
+                    <span class="ig-post"></span><span class="ig-post"></span><span class="ig-post"></span>
+                    <span class="ig-post"></span><span class="ig-post"></span><span class="ig-post"></span>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="compare-card compare-after">
-              <p class="compare-label">Na</p>
-              <div class="mock accent-coral">
-                <p class="mock-name">fitcore</p>
-                <p class="mock-tag">Train zoals je bedoeld bent.</p>
-                <span class="mock-chip">PLAN EEN PROEFLES</span>
+            <div class="compare-col is-after">
+              <p class="compare-label" data-i18n="compare.after">Na</p>
+              <div class="device device-phone is-after">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                  <div class="ig-header">
+                    <span class="ig-avatar"></span>
+                    <div class="ig-info">
+                      <strong class="ig-handle">fitcore</strong>
+                      <div class="ig-stats"><span>312 posts</span><span>4.108 volgers</span></div>
+                    </div>
+                  </div>
+                  <p class="ig-bio">Train zoals je bedoeld bent. Plan een proefles via de link.</p>
+                  <div class="ig-grid">
+                    <span class="ig-post"></span><span class="ig-post"></span><span class="ig-post"></span>
+                    <span class="ig-post"></span><span class="ig-post"></span><span class="ig-post"></span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- Kapper — browser mockup -->
         <div class="example-block">
           <div class="example-label">
-            <span class="example-kind">Kapper</span>
-            <h3>Anne's Haar &amp; Zo</h3>
+            <span class="example-kind" data-i18n="example.kind.kapper">Kapper</span>
+            <h3 data-i18n="example.name.kapper">Anne's Haar &amp; Zo</h3>
           </div>
           <div class="compare-grid">
-            <div class="compare-card compare-before">
-              <p class="compare-label">Voor</p>
-              <div class="mock style-kapper">
-                <p class="mock-name">Anne's Haar &amp; Zo</p>
-                <p class="mock-tag">"waar iedereen mooi wordt"</p>
-                <span class="mock-chip">Nu ook gellak!</span>
+            <div class="compare-col">
+              <p class="compare-label" data-i18n="compare.before">Voor</p>
+              <div class="device device-browser is-before style-kapper">
+                <div class="device-bar">
+                  <span class="device-dot"></span><span class="device-dot"></span><span class="device-dot"></span>
+                  <span class="device-url">annesharenzo.nl</span>
+                </div>
+                <div class="site-nav">
+                  <span class="site-logo">Anne's Haar &amp; Zo</span>
+                  <nav class="site-nav-links"><span>Home</span><span>Behandelingen</span><span>Prijslijst</span><span>Contact</span></nav>
+                </div>
+                <div class="site-hero">
+                  <h4>Welkom bij Anne's Haar &amp; Zo</h4>
+                  <p>"waar iedereen mooi wordt" — nu ook gellak!</p>
+                  <span class="site-btn">Maak een afspraak</span>
+                </div>
+                <div class="site-grid">
+                  <span class="site-card"></span><span class="site-card"></span><span class="site-card"></span>
+                </div>
               </div>
             </div>
-            <div class="compare-card compare-after">
-              <p class="compare-label">Na</p>
-              <div class="mock">
-                <p class="mock-name">anne</p>
-                <p class="mock-tag">Knippen zonder gedoe.</p>
-                <span class="mock-chip">BOEK JE AFSPRAAK</span>
+            <div class="compare-col is-after">
+              <p class="compare-label" data-i18n="compare.after">Na</p>
+              <div class="device device-browser is-after">
+                <div class="device-bar">
+                  <span class="device-dot"></span><span class="device-dot"></span><span class="device-dot"></span>
+                  <span class="device-url">anne.nl</span>
+                </div>
+                <div class="site-nav">
+                  <span class="site-logo">anne</span>
+                  <nav class="site-nav-links"><span>Behandelingen</span><span>Contact</span></nav>
+                </div>
+                <div class="site-hero">
+                  <h4>Knippen zonder gedoe.</h4>
+                  <p>Boek je afspraak in twee minuten, online.</p>
+                  <span class="site-btn">Boek je afspraak</span>
+                </div>
+                <div class="site-grid">
+                  <span class="site-card"></span><span class="site-card"></span><span class="site-card"></span>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- Steady Coaching — phone / Instagram mockup -->
         <div class="example-block">
           <div class="example-label">
-            <span class="example-kind">ZZP · Coaching</span>
+            <span class="example-kind" data-i18n="example.kind.zzp">ZZP · Coaching</span>
             <h3>Steady Coaching</h3>
           </div>
           <div class="compare-grid">
-            <div class="compare-card compare-before">
-              <p class="compare-label">Voor</p>
-              <div class="mock style-zzp">
-                <p class="mock-name">Steady Coaching &amp; Advies</p>
-                <p class="mock-tag">Uw partner in persoonlijke groei</p>
-                <span class="mock-chip">Vrijblijvend kennismakingsgesprek</span>
+            <div class="compare-col">
+              <p class="compare-label" data-i18n="compare.before">Voor</p>
+              <div class="device device-phone is-before style-zzp">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                  <div class="ig-header">
+                    <span class="ig-avatar"></span>
+                    <div class="ig-info">
+                      <strong class="ig-handle">steadycoachingadvies</strong>
+                      <div class="ig-stats"><span>64 posts</span><span>318 volgers</span></div>
+                    </div>
+                  </div>
+                  <p class="ig-bio">Steady Coaching &amp; Advies — Uw partner in persoonlijke groei. Vrijblijvend kennismakingsgesprek mogelijk.</p>
+                  <div class="ig-grid">
+                    <span class="ig-post"></span><span class="ig-post"></span><span class="ig-post"></span>
+                    <span class="ig-post"></span><span class="ig-post"></span><span class="ig-post"></span>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="compare-card compare-after">
-              <p class="compare-label">Na</p>
-              <div class="mock accent-coral">
-                <p class="mock-name">steady</p>
-                <p class="mock-tag">Duidelijkheid, geen jargon.</p>
-                <span class="mock-chip">PLAN EEN KENNISMAKING</span>
+            <div class="compare-col is-after">
+              <p class="compare-label" data-i18n="compare.after">Na</p>
+              <div class="device device-phone is-after">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                  <div class="ig-header">
+                    <span class="ig-avatar"></span>
+                    <div class="ig-info">
+                      <strong class="ig-handle">steady</strong>
+                      <div class="ig-stats"><span>201 posts</span><span>1.240 volgers</span></div>
+                    </div>
+                  </div>
+                  <p class="ig-bio">Duidelijkheid, geen jargon. Plan een kennismaking via de link.</p>
+                  <div class="ig-grid">
+                    <span class="ig-post"></span><span class="ig-post"></span><span class="ig-post"></span>
+                    <span class="ig-post"></span><span class="ig-post"></span><span class="ig-post"></span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <p class="showcase-note">Illustratieve voorbeelden — geen echte klanten, ter demonstratie van het verschil in uitstraling per type bedrijf.</p>
+        <p class="showcase-note" data-i18n="examples.note">Illustratieve voorbeelden — geen echte klanten, ter demonstratie van het verschil in uitstraling per type bedrijf.</p>
       </div>
     </section>
 
     <section class="cta-banner-section">
       <div class="container">
         <div class="cta-banner">
-          <h2>Zo kan jouw merk er ook uitzien</h2>
-          <p>Geen nieuw logo elke maand. Gewoon consequent hetzelfde — dat is een merk.</p>
-          <a href="contact.html" class="btn btn-light">Vraag een gratis intake aan</a>
+          <h2 data-i18n="cta.voorbeelden.title">Zo kan jouw merk er ook uitzien</h2>
+          <p data-i18n="cta.voorbeelden.lede">Geen nieuw logo elke maand. Gewoon consequent hetzelfde — dat is een merk.</p>
+          <a href="contact.html" class="btn btn-light" data-i18n="cta.button.intake">Vraag een gratis intake aan</a>
         </div>
       </div>
     </section>
@@ -178,14 +290,15 @@
         klaro
       </div>
       <ul class="footer-links">
-        <li><a href="diensten.html">Diensten</a></li>
-        <li><a href="voorbeelden.html">Voorbeelden</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="diensten.html" data-i18n="nav.diensten">Diensten</a></li>
+        <li><a href="voorbeelden.html" data-i18n="nav.voorbeelden">Voorbeelden</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <p style="margin:0;">© <span id="year"></span> Klaro</p>
     </div>
   </footer>
 
+  <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

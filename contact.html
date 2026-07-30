@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact — Klaro</title>
-  <meta name="description" content="Plan een gratis intake bij Klaro. Binnen 24 uur een vast voorstel voor je brandbook, social kit of website." />
+  <title data-i18n="meta.title.contact">Contact — Klaro</title>
+  <meta name="description" data-i18n-attr="content:meta.desc.contact" content="Plan een gratis intake bij Klaro. Binnen 24 uur een vast voorstel voor je brandbook, social kit of website." />
 
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
 
@@ -26,14 +26,22 @@
 
       <nav aria-label="Hoofdmenu">
         <ul class="nav-links">
-          <li><a href="diensten.html">Diensten</a></li>
-          <li><a href="voorbeelden.html">Voorbeelden</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="diensten.html" data-i18n="nav.diensten">Diensten</a></li>
+          <li><a href="voorbeelden.html" data-i18n="nav.voorbeelden">Voorbeelden</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
         </ul>
+        <div class="mobile-lang-switch lang-switch" role="group" aria-label="Taal / Language">
+          <button type="button" class="lang-btn" data-lang="nl">NL</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
       </nav>
 
       <div class="nav-cta">
-        <a href="contact.html" class="btn btn-secondary">Gratis intake</a>
+        <div class="lang-switch" role="group" aria-label="Taal / Language">
+          <button type="button" class="lang-btn" data-lang="nl">NL</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <a href="contact.html" class="btn btn-secondary" data-i18n="nav.intake">Gratis intake</a>
         <button class="nav-toggle" aria-label="Menu openen" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -46,42 +54,42 @@
     <section class="contact">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow" style="color:var(--yellow);">Aan de slag</p>
-          <h1 style="color:var(--white);font-size:clamp(2.2rem, 6vw, 3.2rem);">Klaar voor een merk waar je trots op bent?</h1>
-          <p>Vul het formulier in of stuur direct een bericht. Je krijgt binnen 24 uur een
+          <p class="eyebrow" data-i18n="contact.eyebrow">Aan de slag</p>
+          <h1 style="color:var(--white);font-size:clamp(2.2rem, 6vw, 3.2rem);" data-i18n="contact.title">Klaar voor een merk waar je trots op bent?</h1>
+          <p data-i18n="contact.lede">Vul het formulier in of stuur direct een bericht. Je krijgt binnen 24 uur een
             vast voorstel — geen bandbreedte, gewoon een concreet bedrag.</p>
         </div>
 
         <div class="contact-grid">
           <form class="contact-form" id="contact-form">
             <div class="form-row">
-              <label for="name">Naam</label>
+              <label for="name" data-i18n="form.name">Naam</label>
               <input type="text" id="name" name="name" required />
             </div>
             <div class="form-row">
-              <label for="business">Bedrijfsnaam</label>
+              <label for="business" data-i18n="form.business">Bedrijfsnaam</label>
               <input type="text" id="business" name="business" required />
             </div>
             <div class="form-row">
-              <label for="email">E-mailadres</label>
+              <label for="email" data-i18n="form.email">E-mailadres</label>
               <input type="email" id="email" name="email" required />
             </div>
             <div class="form-row">
-              <label for="service">Waar heb je interesse in?</label>
+              <label for="service" data-i18n="form.service.label">Waar heb je interesse in?</label>
               <select id="service" name="service">
-                <option>Brandbook</option>
-                <option>Social media kit</option>
-                <option>Website</option>
-                <option>Bundel (brandbook + kit)</option>
-                <option>Weet ik nog niet</option>
+                <option data-i18n="form.service.opt1">Brandbook</option>
+                <option data-i18n="form.service.opt2">Social media kit</option>
+                <option data-i18n="form.service.opt3">Website</option>
+                <option data-i18n="form.service.opt4">Bundel (brandbook + kit)</option>
+                <option data-i18n="form.service.opt5">Weet ik nog niet</option>
               </select>
             </div>
             <div class="form-row">
-              <label for="message">Vertel kort over je bedrijf</label>
-              <textarea id="message" name="message" placeholder="Bestaat er al een logo? Wanneer wil je live?"></textarea>
+              <label for="message" data-i18n="form.message.label">Vertel kort over je bedrijf</label>
+              <textarea id="message" name="message" data-i18n-attr="placeholder:form.message.placeholder" placeholder="Bestaat er al een logo? Wanneer wil je live?"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Verstuur aanvraag</button>
-            <p class="form-note">Opent je e-mailprogramma met alles al ingevuld — geen account nodig.</p>
+            <button type="submit" class="btn btn-primary btn-block" data-i18n="form.submit">Verstuur aanvraag</button>
+            <p class="form-note" data-i18n="form.note">Opent je e-mailprogramma met alles al ingevuld — geen account nodig.</p>
           </form>
 
           <div class="contact-direct">
@@ -107,14 +115,15 @@
         klaro
       </div>
       <ul class="footer-links">
-        <li><a href="diensten.html">Diensten</a></li>
-        <li><a href="voorbeelden.html">Voorbeelden</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="diensten.html" data-i18n="nav.diensten">Diensten</a></li>
+        <li><a href="voorbeelden.html" data-i18n="nav.voorbeelden">Voorbeelden</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <p style="margin:0;">© <span id="year"></span> Klaro</p>
     </div>
   </footer>
 
+  <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
