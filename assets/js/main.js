@@ -18,13 +18,21 @@
     });
   }
 
+  var currentPage = location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll(".nav-links a").forEach(function (link) {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("is-active");
+      link.setAttribute("aria-current", "page");
+    }
+  });
+
   var prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   ).matches;
 
   if (!prefersReducedMotion && "IntersectionObserver" in window) {
     var revealTargets = document.querySelectorAll(
-      ".hero-copy, .hero-visual, .section-head, .service-card, .compare-card, .contact-form, .contact-direct"
+      ".hero-copy, .hero-visual, .page-hero, .section-head, .service-card, .compare-card, .contact-form, .contact-direct, .example-block, .cta-banner"
     );
 
     revealTargets.forEach(function (el, i) {

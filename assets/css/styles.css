@@ -224,6 +224,14 @@ section {
   right: 0;
 }
 
+.nav-links a.is-active {
+  color: var(--blue);
+}
+
+.nav-links a.is-active::after {
+  right: 0;
+}
+
 .logo .bolt {
   transition: transform 0.2s ease;
 }
@@ -357,6 +365,84 @@ section {
   50% { transform: translate(-2%, 2%) scale(1.06); }
 }
 
+/* ---------- Page hero (subpaginas) ---------- */
+
+.page-hero {
+  padding: 52px 0 8px;
+}
+
+.page-hero .container {
+  max-width: 720px;
+}
+
+.page-hero h1 {
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  margin-bottom: 14px;
+}
+
+.page-hero p {
+  font-size: 1.05rem;
+  color: #34363D;
+  max-width: 58ch;
+}
+
+/* ---------- CTA banner ---------- */
+
+.cta-banner-section {
+  padding-top: 0;
+}
+
+.cta-banner {
+  background: var(--blue);
+  color: var(--white);
+  border-radius: 24px;
+  padding: 56px 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-banner h2 {
+  color: var(--white);
+  font-size: clamp(1.7rem, 4vw, 2.3rem);
+}
+
+.cta-banner p {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 46ch;
+  margin: 0 auto 28px;
+}
+
+.btn-light {
+  background: var(--white);
+  color: var(--ink);
+}
+
+.btn-light:hover {
+  background: var(--yellow);
+  color: var(--ink);
+  transform: translateY(-2px);
+}
+
+/* ---------- Homepage teasers ---------- */
+
+.teaser-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.teaser-head .section-head {
+  margin-bottom: 0;
+}
+
+.service-card.is-mini p {
+  flex-grow: 0;
+}
+
 /* ---------- Diensten ---------- */
 
 .services {
@@ -472,6 +558,34 @@ section {
   margin-top: 16px;
 }
 
+.example-block + .example-block {
+  margin-top: 56px;
+}
+
+.example-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.example-label .example-kind {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--ink);
+  color: var(--white);
+  padding: 5px 12px;
+  border-radius: 100px;
+}
+
+.example-label h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
 .compare-grid {
   display: grid;
   gap: 20px;
@@ -573,6 +687,74 @@ section {
   color: var(--ink);
   padding: 5px 14px;
   border-radius: 100px;
+}
+
+.compare-after .mock.accent-coral .mock-chip {
+  background: var(--coral);
+  color: var(--white);
+}
+
+/* Voorbeeld-varianten "voor" — elk bedrijfstype zijn eigen DIY-uitstraling */
+
+.mock.style-gym .mock-name {
+  font-family: Impact, "Arial Black", sans-serif;
+  color: #B4231A;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  transform: none;
+}
+
+.mock.style-gym .mock-tag {
+  font-family: Impact, "Arial Black", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: #222;
+}
+
+.mock.style-gym .mock-chip {
+  background: #111;
+  color: #FFD400;
+  border: none;
+  font-family: Impact, "Arial Black", sans-serif;
+}
+
+.mock.style-kapper .mock-name {
+  font-family: "Brush Script MT", cursive;
+  color: #B23A6B;
+  font-size: 2rem;
+  transform: rotate(-3deg);
+}
+
+.mock.style-kapper .mock-tag {
+  font-family: "Times New Roman", serif;
+  font-style: italic;
+  color: #666;
+}
+
+.mock.style-kapper .mock-chip {
+  background: #F1C6D6;
+  color: #6B2044;
+  border: 1px solid #D89AB4;
+  font-family: "Times New Roman", serif;
+}
+
+.mock.style-zzp .mock-name {
+  font-family: "Times New Roman", serif;
+  color: #1E3A6E;
+  font-weight: bold;
+  transform: none;
+}
+
+.mock.style-zzp .mock-tag {
+  font-family: Arial, sans-serif;
+  color: #555;
+}
+
+.mock.style-zzp .mock-chip {
+  background: #DCE3F0;
+  color: #1E3A6E;
+  border: 1px solid #9FB3D6;
+  font-family: Arial, sans-serif;
 }
 
 /* ---------- Contact ---------- */
