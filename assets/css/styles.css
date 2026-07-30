@@ -24,6 +24,17 @@
   box-sizing: border-box;
 }
 
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--coral), var(--yellow));
+  z-index: 200;
+  pointer-events: none;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -110,6 +121,35 @@ section {
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
   white-space: nowrap;
   will-change: transform;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.65), transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+.btn-light::before {
+  background: linear-gradient(115deg, transparent, rgba(20, 22, 26, 0.15), transparent);
+}
+
+.btn:hover::before {
+  animation: btn-shimmer 0.7s ease;
+}
+
+@keyframes btn-shimmer {
+  from { left: -60%; }
+  to { left: 130%; }
 }
 
 .btn:active {
@@ -233,11 +273,12 @@ section {
 }
 
 .logo .bolt {
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .logo:hover .bolt {
   transform: rotate(-8deg) scale(1.08);
+  filter: drop-shadow(0 0 6px rgba(45, 91, 255, 0.65));
 }
 
 .nav-cta {
@@ -283,6 +324,14 @@ section {
 
 .hero h1 .accent {
   color: var(--blue);
+  display: inline-block;
+  animation: accent-glow 5s ease-in-out 1.4s infinite;
+}
+
+@keyframes accent-glow {
+  0%, 90%, 100% { text-shadow: none; }
+  93% { text-shadow: 0 0 20px rgba(45, 91, 255, 0.6); }
+  96% { text-shadow: 0 0 4px rgba(45, 91, 255, 0.15); }
 }
 
 .hero-lede {
@@ -337,8 +386,11 @@ section {
 
 .hero-visual .bolt-big {
   width: 34%;
-  filter: drop-shadow(0 12px 24px rgba(0,0,0,0.18));
-  animation: bolt-float 3.2s ease-in-out infinite;
+  opacity: 0;
+  filter: drop-shadow(0 0 0 rgba(255,255,255,0));
+  animation:
+    bolt-strike 0.85s cubic-bezier(0.2, 0.9, 0.3, 1) 0.2s forwards,
+    bolt-float 3.2s ease-in-out 1.05s infinite;
 }
 
 .hero-visual .bolt-big path {
@@ -353,6 +405,80 @@ section {
     radial-gradient(circle at 85% 15%, rgba(255,201,60,0.55), transparent 45%),
     radial-gradient(circle at 10% 90%, rgba(255,107,74,0.5), transparent 45%);
   animation: blob-drift 9s ease-in-out infinite;
+}
+
+.hero-visual .strike-flash {
+  position: absolute;
+  inset: 0;
+  background: var(--white);
+  opacity: 0;
+  pointer-events: none;
+  animation: strike-flash 0.85s ease-out 0.2s 1;
+}
+
+.hero-visual .spark {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--yellow);
+  box-shadow: 0 0 10px 2px rgba(255, 201, 60, 0.9);
+  opacity: 0;
+  animation: spark-drift 2.6s ease-in-out infinite;
+  animation-play-state: paused;
+}
+
+.hero-visual.in-view .spark {
+  animation-play-state: running;
+}
+
+.spark-1 { top: 22%; left: 16%; animation-delay: 1.1s; }
+.spark-2 {
+  top: 64%; left: 76%; animation-delay: 1.9s;
+  background: var(--coral);
+  box-shadow: 0 0 10px 2px rgba(255, 107, 74, 0.9);
+}
+.spark-3 { top: 78%; left: 28%; animation-delay: 2.6s; }
+.spark-4 {
+  top: 16%; left: 68%; animation-delay: 1.5s;
+  background: var(--coral);
+  box-shadow: 0 0 10px 2px rgba(255, 107, 74, 0.9);
+}
+
+@keyframes bolt-strike {
+  0% {
+    opacity: 0;
+    transform: scale(0.35) translateY(-36px) rotate(0deg);
+    filter: drop-shadow(0 0 0 rgba(255,255,255,0));
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1.18) translateY(4px) rotate(-3deg);
+    filter: drop-shadow(0 0 36px rgba(255,255,255,0.95));
+  }
+  75% {
+    transform: scale(0.94) translateY(-2px) rotate(1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0) rotate(0deg);
+    filter: drop-shadow(0 12px 24px rgba(0,0,0,0.18));
+  }
+}
+
+@keyframes strike-flash {
+  0% { opacity: 0; }
+  10% { opacity: 0.85; }
+  22% { opacity: 0; }
+  28% { opacity: 0.35; }
+  38% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes spark-drift {
+  0%, 100% { opacity: 0; transform: translateY(0) scale(0.6); }
+  35% { opacity: 1; transform: translateY(-16px) scale(1); }
+  65% { opacity: 0.5; transform: translateY(-28px) scale(0.8); }
 }
 
 @keyframes bolt-float {
@@ -400,6 +526,29 @@ section {
   text-align: center;
   position: relative;
   overflow: hidden;
+  isolation: isolate;
+}
+
+.cta-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.9), transparent 60%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cta-banner.is-visible::after {
+  animation: banner-flash 1s ease-out;
+}
+
+@keyframes banner-flash {
+  0% { opacity: 0; }
+  16% { opacity: 0.9; }
+  34% { opacity: 0; }
+  44% { opacity: 0.4; }
+  58% { opacity: 0; }
+  100% { opacity: 0; }
 }
 
 .cta-banner h2 {
@@ -989,6 +1138,23 @@ section .container > .section-head + * {
   .hero-visual .bolt-big,
   .hero-visual::after {
     animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: drop-shadow(0 12px 24px rgba(0,0,0,0.18)) !important;
+  }
+  .hero-visual .strike-flash,
+  .hero-visual .spark {
+    display: none !important;
+  }
+  .hero h1 .accent {
+    animation: none !important;
+    text-shadow: none !important;
+  }
+  .cta-banner::after {
+    animation: none !important;
+  }
+  .btn::before {
+    display: none !important;
   }
   .reveal {
     opacity: 1 !important;

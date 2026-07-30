@@ -55,6 +55,41 @@
     revealTargets.forEach(function (el) {
       observer.observe(el);
     });
+
+    var heroVisual = document.querySelector(".hero-visual");
+    if (heroVisual) {
+      var heroObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            entry.target.classList.toggle("in-view", entry.isIntersecting);
+          });
+        },
+        { threshold: 0.2 }
+      );
+      heroObserver.observe(heroVisual);
+    }
+  }
+
+  var progressBar = document.querySelector(".scroll-progress");
+  if (progressBar) {
+    var ticking = false;
+    var updateProgress = function () {
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+      progressBar.style.width = pct + "%";
+      ticking = false;
+    };
+    window.addEventListener(
+      "scroll",
+      function () {
+        if (!ticking) {
+          requestAnimationFrame(updateProgress);
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
+    updateProgress();
   }
 
   var yearEl = document.getElementById("year");
